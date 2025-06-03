@@ -25,7 +25,9 @@ model = Ridge(alpha=1.0)
 model.fit(X, y)
 
 # streamlit 
-st.title("YouTube Title Recommender (Engagement-Optimized)")
+st.set_page_config(layout="wide")
+st.title("YouTube Title Recommender")
+st.subheader("Enter your video concept to discover trending, high-engagement tiles from popular lifestyle creators.")
 user_input = st.text_input("Enter a video title idea:")
 
 if user_input:
@@ -38,6 +40,14 @@ if user_input:
     df['predicted_diff'] = np.abs(df['heuristic_engagement'] - predicted_engmt)
     
     results = df.sort_values(by=['similarity', 'predicted_diff'], ascending=[False, True])
+    results.rename(columns={'heuristic_engagement': 'Engagement Rate', 'title':'Title', 'view_count':'View Count'}, inplace=True)
+    results['Engagement Rate'] = (results['Engagement Rate'] * 100).round(1).astype(str) + '%'
     
     st.subheader("Top Similar High-Engagement Titles")
-    st.dataframe(results[['title','view_count', 'heuristic_engagement']].head(4).sort_values('heuristic_engagement', ascending=False))
+    st.dataframe(
+        results[['Title', 'View Count', 'Engagement Rate']]
+        .head(4)
+        .sort_values('Engagement Rate', ascending=False)
+        .reset_index(drop=True),
+        use_container_width=True
+    )
