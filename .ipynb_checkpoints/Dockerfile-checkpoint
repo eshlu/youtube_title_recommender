@@ -5,10 +5,9 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY predict.py .
-COPY ridge_model.joblib .
-COPY tfidf_vectorizer.joblib .
+COPY app/predict.py .
+COPY app/ridge_model.joblib .
+COPY app/tfidf_vectorizer.joblib .
 
-EXPOSE 8000
-
-CMD ["uvicorn", "predict:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 8080
+CMD ["uvicorn", "predict:app", "--host", "0.0.0.0", "--port", "8080"]
