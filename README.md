@@ -36,7 +36,8 @@ This project helps lifestyle & wellness content creators discover video titles t
 - API is deployed on Google Cloud Run, containerized using Docker
 - Model + vectorizer are stored as .joblib files
 
-## API example
+## Examples
+### API
 `curl -X POST https://youtube-model-api-836750386700.us-west1.run.app/predict \
      -H "Content-Type: application/json" \
      -d '{"title": "skincare routine"}'`
@@ -45,12 +46,15 @@ Expected response (random engagement for demo purposes):
 
 `{"predicted_engagement": 0.0451}`
 
+### Streamlit interface
+[Link to Streamlit App](shl-418-youtube.streamlit.app)
+
 ## Deployment 
-| Component        | Platform         |   |   |   |
-|------------------|------------------|---|---|---|
-| Model API        | Google Cloud Run |   |   |   |
-| Frontend App     | Streamlit Cloud  |   |   |   |
-| Containerization | Docker           |   |   |   |
+| Component        | Platform         |   
+|------------------|------------------|
+| Model API        | Google Cloud Run |
+| Frontend App     | Streamlit Cloud  |
+| Containerization | Docker           |
 
 ## Directory Structure
 ```
