@@ -26,7 +26,7 @@ if user_input:
     import joblib
     import numpy as np
     
-    vectorizer = joblib.load("tfidf_vectorizer.joblib")
+    vectorizer = joblib.load("app/tfidf_vectorizer.joblib")
     X = vectorizer.transform(df['clean_title'])
     user_vector = vectorizer.transform([user_input.lower()])
     
