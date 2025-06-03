@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 
-df = pd.read_csv("youtube_data_filtered.csv")
+df = pd.read_csv("app/youtube_data_filtered.csv")
 df['heuristic_engagement'] = (df['like_count'] + df['comment_count']) / df['view_count']
 df['clean_title'] = df['title'].str.lower().str.replace(r'[\W_]+', ' ', regex=True)
 
