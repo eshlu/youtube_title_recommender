@@ -5,27 +5,26 @@ from sklearn.linear_model import Ridge
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-# Load your preprocessed DataFrame `full_df` with required columns
-# Simulating for now (replace with actual data load)
+# load data
 df = pd.read_csv("youtube_data_filtered.csv")
 
-# Define heuristic engagement score
+# engagement heuristic
 alpha = 1
 df['heuristic_engagement'] = (
     df['like_count'] + (alpha * df['comment_count'])
 ) / df['view_count']
 
-# Clean and vectorize titles
+# title vectors
 df['clean_title'] = df['title'].str.lower().str.replace(r'[\W_]+', ' ', regex=True)
 vectorizer = TfidfVectorizer(stop_words='english', max_features=1000)
 X = vectorizer.fit_transform(df['clean_title'])
 y = df['heuristic_engagement']
 
-# Train the model
+# modeling
 model = Ridge(alpha=1.0)
 model.fit(X, y)
 
-# Streamlit app
+# streamlit 
 st.title("YouTube Title Recommender (Engagement-Optimized)")
 user_input = st.text_input("Enter a video title idea:")
 
