@@ -63,8 +63,7 @@ Expected response (random engagement for demo purposes):
 ├── Dockerfile
 ├── requirements.txt
 ├── README.md
-└── presentation/
-    └── final_project_slides.pdf
+└── presentation.pdf
 ```
 
 
