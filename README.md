@@ -38,10 +38,10 @@ This project helps lifestyle & wellness content creators discover video titles t
 
 ## API example
 `curl -X POST https://youtube-model-api-836750386700.us-west1.run.app/predict \
-  -H "Content-Type: application/json" \
-  -d '{"title": "sunday reset routine"}'`
+     -H "Content-Type: application/json" \
+     -d '{"title": "skincare routine"}'`
 
-Expected response:
+Expected response (random engagement for demo purposes):
 
 `{"predicted_engagement": 0.0451}`
 
