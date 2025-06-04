@@ -18,13 +18,16 @@ This project explores how video titles influence engagement by analyzing hundred
 
 ## Exploratory Data Analysis
 ![weekly_uploads](https://github.com/user-attachments/assets/c464dd07-c19e-4d2d-bdb8-1bfe474c31bb)
+
 Uploads appear cyclical in nature, with noticeable peaks and valleys across weeks. This suggests that creators often post on a weekly or biweekly cadence, consistent with content calendars in the lifestyle space.
 
 ![title_lens](https://github.com/user-attachments/assets/550c5df8-0fcd-48ca-ac46-47e94f6cffb5)
+
 Video title lengths are widely distributed, with a median of 47 characters.
 This reflects both concise hooks and longer, multi-phrase titles, indicating a range of titling strategies used by top creators.
 
 ![view_v_like](https://github.com/user-attachments/assets/0c1f1e8e-14ee-4319-a523-067e1e6e3c87)
+
 There is a clear positive correlation between views and likes, with more points lying above the diagonal, suggesting high like-to-view ratios.
 Outliers—primarily sponsored content—were removed to maintain consistency.
 Most videos receive under 750K views and fewer than 50K likes, highlighting a long-tail distribution.
