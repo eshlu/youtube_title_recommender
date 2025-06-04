@@ -67,7 +67,7 @@ Expected response (random engagement for demo purposes):
 `{"predicted_engagement": 0.0451}`
 
 ### Streamlit interface
-[Link to Streamlit App](shl-418-youtube.streamlit.app)
+[Link to Streamlit App](https://shl-418-youtube.streamlit.app)
 
 ## Deployment 
 | Component        | Platform         |   
